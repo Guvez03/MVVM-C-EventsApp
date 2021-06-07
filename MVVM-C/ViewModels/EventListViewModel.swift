@@ -14,7 +14,7 @@ final class EventListViewModel {
     var onUpdate = {}
     
     enum Cell{
-        case event(EventCellViewModel)  // bu kullanımı anlamadım event(EventCellViewModel)
+        case event(EventCellViewModel)
     }
     
     private(set) var cells: [Cell] = []

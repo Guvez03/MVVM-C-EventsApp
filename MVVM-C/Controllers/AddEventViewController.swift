@@ -48,7 +48,6 @@ class AddEventViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
         navigationController?.navigationBar.tintColor = .black
         
-        // large title çalışması için
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.setContentOffset(.init(x: 0, y: -1), animated: false)
     }
@@ -80,7 +79,7 @@ extension AddEventViewController: UITableViewDataSource {
 extension AddEventViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
-        tableView.deselectRow(at: indexPath, animated: false) // tıkladığımız cell'in tıklama sonrası tıklanma görünürlüğünü kaldırıyor.
+        tableView.deselectRow(at: indexPath, animated: false) 
     }
 }
 
@@ -88,7 +87,6 @@ extension AddEventViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let currentText = textField.text else{return false}
         
-        // Bu işlemleri anlamadım tekrar bakılacak.
         let point = textField.convert(textField.bounds.origin, to: tableView)
         if let indexPath = tableView.indexPathForRow(at: point) {
             

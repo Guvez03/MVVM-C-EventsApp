@@ -16,7 +16,7 @@ final class TitleSubtitleCellViewModel{
     }
     
     let title: String
-    private(set) var subtitle: String // neden private set kullandı
+    private(set) var subtitle: String 
     private(set) var image: UIImage?
     let placeholder: String
     let type: CellType

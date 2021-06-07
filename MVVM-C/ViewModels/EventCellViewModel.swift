@@ -28,7 +28,7 @@ struct EventCellViewModel {
     var onSelect: (NSManagedObjectID) -> Void = {_ in}
     
     private var cacheKey: String {
-        event.objectID.description // kaydedilen verinin ıd sini alırız.
+        event.objectID.description 
     }
     
     let date = Date()
@@ -57,7 +57,6 @@ struct EventCellViewModel {
         return TimeRemaningViewModel(timeRemaningParts: timeRemaningParts, mode: .cell)
     }
     
-    // imageleri böyle aldığımızda scroll sırasında gecikmeler oluyor bunun için image caching kullanılabilir.
 //    var backgroundImage: UIImage {
 //        guard let imageData = event.image else {return UIImage()}
 //        return UIImage(data: imageData) ?? UIImage()

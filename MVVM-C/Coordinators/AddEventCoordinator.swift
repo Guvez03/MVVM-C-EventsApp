@@ -13,7 +13,7 @@ final class AddEventCoordinator: Coordinator{
     private let navigationController : UINavigationController
     var modalNavigationController: UINavigationController?
     var parentCoordinator : EventListCoordinator?
-    var completion: (UIImage) -> Void = {_ in} // image alan ve bir şey döndürmeyen bir completion
+    var completion: (UIImage) -> Void = {_ in}
     
     init(navigationController : UINavigationController) {
         self.navigationController = navigationController
@@ -22,9 +22,9 @@ final class AddEventCoordinator: Coordinator{
     func start() {
         
         
-        modalNavigationController = UINavigationController() // ekranın yukarısında bir navigation bar çıkarmak için böyle bir kullanım yaptık.
+        modalNavigationController = UINavigationController()
         let addEventViewController : AddEventViewController = .instantiate()
-        modalNavigationController?.setViewControllers([addEventViewController], animated: false)  // setViewController = Her bir denetleyiciyi açıkça zorlamadan veya açmadan geçerli görünüm denetleyici yığınını güncellemek veya değiştirmek için bu yöntemi kullanın.
+        modalNavigationController?.setViewControllers([addEventViewController], animated: false)  // setViewController = Her bir denetleyiciyi açıkça zorlamadan veya açmadan geçerli görünüm denetleyici yığınını güncellemek veya değiştirmek için bu yöntem kullanılmuıştır.
         let addEventViewModel = AddEventViewModel(cellBuilder: EventsCellBuilder())
         addEventViewModel.coordinator = self
         addEventViewController.viewModel = addEventViewModel
